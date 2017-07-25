@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <!-- 将对应的属性抽取到样式中去 -->
+    <TextView 
+        android:text="功能列表"
+        style="@style/TitleStyle"/>
+    
+    <!-- 跑马灯效果,必须让文字获取焦点， -->
+    <!-- 自定义控件达到滚动效果（重写原来的TextView,让其一直获取焦点即可) -->
+    <com.itheima.mobilesafe05.view.FocusTextView
+        android:text="秋天秋天悄悄过去，留下小秘密，啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dp"
+        android:singleLine="true"/>
+    
+    <!-- android:verticalSpacing指定内部条目之间的间距 -->
+    <GridView 
+        android:id="@+id/gv_home"
+        android:numColumns="3"
+        android:verticalSpacing="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+            
+</LinearLayout>

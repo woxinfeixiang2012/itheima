@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.itheima.heimasafe05"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.itheima.mobilesafe05.activity.SplashActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.itheima.mobilesafe05.activity.HomeActivity" />
+        <activity android:name="com.itheima.mobilesafe05.activity.SettingActivity" />
+        <activity android:name="com.itheima.mobilesafe05.activity.SetupOverActivity" />
+        <activity android:name="com.itheima.mobilesafe05.activity.Setup1Activity" />
+        <activity android:name="com.itheima.mobilesafe05.activity.Setup2Activity" />
+        <activity android:name="com.itheima.mobilesafe05.activity.Setup3Activity" />
+        <activity android:name="com.itheima.mobilesafe05.activity.ContactListActivity"/>
+        <activity android:name="com.itheima.mobilesafe05.activity.Setup4Activity" />
+        
+        <receiver android:name="com.itheima.mobilesafe05.receiver.BootReceiver">
+            <intent-filter >
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.itheima.mobilesafe05.receiver.SmsReceiver">
+            <intent-filter >
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

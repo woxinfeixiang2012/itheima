@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/TitleStyle"
+        android:text="设置中心" />
+
+    
+    <!-- SettingItemView需要再构建布局的时候指定title和des字符串内容 -->
+    <!-- 自定义命名空间mobilesafe替换掉原来的android代表当前应用自定义的属性 xmlns:mobilesafe="http://schemas.android.com/apk/res/com.itheima.heimasafe05 -->
+    <com.itheima.mobilesafe05.view.SettingItemView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.itheima.heimasafe05"
+        android:id="@+id/siv_update"
+        mobilesafe:destitle="自动更新设置"
+        mobilesafe:desoff="自动更新已关闭"
+        mobilesafe:deson="自动更新已开启"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+  
+</LinearLayout>
